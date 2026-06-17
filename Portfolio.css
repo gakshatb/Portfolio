@@ -203,12 +203,12 @@ a{color:inherit;text-decoration:none}
 #achievements{padding:clamp(64px,8vw,120px) clamp(20px,5vw,60px)}
 .ach-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
 .ach-sub-label{font-family:'Space Mono',monospace;font-size:.66rem;color:var(--dimmed);letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
-.gate-card{display:flex;align-items:center;gap:16px;padding:15px 20px;border-radius:10px;border:1px solid var(--border);background:var(--surface);margin-bottom:10px;transition:transform .25s,border-color .25s}
-.gate-card:hover{transform:translateY(-2px)}
+.gate-card{display:flex;align-items:center;gap:16px;padding:15px 20px;border-radius:10px;border:1px solid var(--border);background:var(--surface);margin-bottom:10px;transition:transform .25s,border-color .25s;text-decoration:none;color:inherit}
+.gate-card:hover{transform:translateY(-2px) translateX(2px);border-color:var(--border2)}
 .gate-rank{font-family:'Space Mono',monospace;font-size:1.1rem;font-weight:700;min-width:68px}
 .gate-title{font-weight:600;font-size:.86rem}
 .gate-detail{color:var(--muted);font-size:.74rem;margin-top:2px}
-.cert-card{padding:15px 20px;border-radius:10px;border:1px solid var(--border);background:var(--surface);margin-bottom:10px;transition:transform .25s,border-color .25s}
+.cert-card{padding:15px 20px;border-radius:10px;border:1px solid var(--border);background:var(--surface);margin-bottom:10px;transition:transform .25s,border-color .25s;text-decoration:none;color:inherit}
 .cert-card:hover{transform:translateY(-2px);border-color:var(--border2)}
 .cert-header{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:4px}
 .cert-name{font-weight:600;font-size:.86rem}
