@@ -114,6 +114,30 @@ a{color:inherit;text-decoration:none}
 .section-title{font-size:clamp(1.9rem,5vw,3.4rem);font-weight:700;margin-bottom:48px}
 .tag{display:inline-block;padding:3px 11px;border:1px solid var(--border2);border-radius:9999px;font-family:'Space Mono',monospace;font-size:.66rem;color:var(--muted);letter-spacing:.04em;background:var(--surface2);transition:border-color .2s,color .2s}
 
+/* ── COINS SECTION ── */
+#coins{position:relative;padding:clamp(80px,10vw,140px) clamp(20px,5vw,60px);overflow:hidden;perspective:1400px}
+.coins-bg-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(0,255,178,.05) 0%,transparent 70%);pointer-events:none;z-index:0}
+.coins-wrap{position:relative;z-index:1;max-width:1100px;margin:0 auto;text-align:center}
+.coins-row{display:flex;justify-content:center;align-items:center;gap:clamp(40px,8vw,120px);margin-top:56px;flex-wrap:wrap}
+.coin-stage{perspective:1200px;width:clamp(150px,22vw,260px);height:clamp(150px,22vw,260px)}
+.coin{position:relative;width:100%;height:100%;transform-style:preserve-3d;will-change:transform}
+.coin-face{position:absolute;inset:0;border-radius:50%;overflow:hidden;backface-visibility:hidden;display:flex;align-items:center;justify-content:center;border:3px solid var(--border2);box-shadow:0 0 0 6px var(--bg),0 0 0 8px var(--border),0 20px 50px rgba(0,0,0,.5);background:var(--surface2)}
+.coin-face img{width:100%;height:100%;object-fit:cover}
+.coin-face-back{transform:rotateY(180deg)}
+.coin-rim-label{position:absolute;bottom:-34px;left:50%;transform:translateX(-50%);font-family:'Space Mono',monospace;font-size:.7rem;color:var(--muted);letter-spacing:.1em;white-space:nowrap}
+.coin-rim-label .rim-course{display:block;color:var(--text);font-weight:600;font-size:.74rem}
+.coin-rim-label .rim-college{display:block;color:var(--muted);font-size:.66rem;margin-top:1px}
+.coin-edge-glow{position:absolute;inset:-8px;border-radius:50%;background:conic-gradient(from 0deg,var(--green),var(--blue),var(--purple),var(--green));opacity:0;filter:blur(14px);z-index:-1;transition:opacity .4s}
+.coin-stage:hover .coin-edge-glow{opacity:.35}
+.coins-caption{margin-top:64px;color:var(--muted);font-size:.85rem;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.7}
+.coins-scroll-track{position:relative;height:1px}
+@media(max-width:640px){
+  .coins-row{gap:50px}
+  .coin-rim-label{font-size:.6rem;bottom:-28px}
+  .coin-rim-label .rim-course{font-size:.64rem}
+  .coin-rim-label .rim-college{font-size:.58rem}
+}
+
 /* ── ABOUT ── */
 #about{background:var(--surface);border-radius:28px 28px 0 0;margin-top:-28px}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}

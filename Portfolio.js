@@ -176,7 +176,7 @@ document.addEventListener('touchend', e => {
 /* ══════════════════════════════════════════
    TYPEWRITER
 ══════════════════════════════════════════ */
-const phrases = ['software engineer & data scientist.','flask · vue.js · python · sql.','iit madras × walchand engineering.','20 repositories on github.','building systems that scale.'];
+const phrases = ['Software Engineer & DATA Scientist.','Flask · Vue.js · python · SQL.','IIT Madras × Walchand Engineering.','20 repositories on GitHub.','building systems that scale.'];
 let pIdx=0,cIdx=0,del=false;
 const typedEl = document.getElementById('typed-text');
 function typeLoop(){
@@ -192,6 +192,35 @@ function typeLoop(){
   }
 }
 setTimeout(typeLoop,900);
+
+/* ══════════════════════════════════════════
+   COINS — scroll-tied 3D flip (fully reversible)
+══════════════════════════════════════════ */
+const coin1 = document.getElementById('coin-1');
+const coin2 = document.getElementById('coin-2');
+const coinsSection = document.getElementById('coins');
+
+function updateCoins(){
+  if(!coinsSection) return;
+  const rect = coinsSection.getBoundingClientRect();
+  const vh = window.innerHeight;
+  // progress: 0 when section bottom enters viewport bottom, 1 when section top exits viewport top
+  const total = rect.height + vh;
+  const traveled = vh - rect.top;
+  let progress = traveled / total;
+  progress = Math.max(0, Math.min(1, progress));
+
+  // Coin 1: 0 -> 720deg (two full flips) tied directly to progress, fully reversible
+  const rotY1 = progress * 720;
+  coin1.style.transform = `rotateY(${rotY1}deg) rotateX(${Math.sin(progress*Math.PI)*8}deg)`;
+
+  // Coin 2: rotates the opposite direction and slightly offset, for visual variety
+  const rotY2 = -progress * 720 + 180;
+  coin2.style.transform = `rotateY(${rotY2}deg) rotateX(${Math.cos(progress*Math.PI)*8}deg)`;
+}
+window.addEventListener('scroll', updateCoins, { passive: true });
+window.addEventListener('resize', updateCoins);
+updateCoins();
 
 /* ══════════════════════════════════════════
    SCROLL REVEALS
